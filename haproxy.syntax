@@ -1,0 +1,353 @@
+# THIS IS CONTENT OF: $SHAREPATH/share/mc/syntax/haproxy.syntax
+#
+# MACOS> SHAREPATH='/opt/homebrew/Cellar/midnight-commander/4.8.31'
+# LINUX> SHAREPATH='/usr/'
+#
+# ADD following 2 lines to $SHAREPATH/share/mc/syntax/Syntax:
+#  file haproxy\.cfg$ ^#\sHAPROXY\sconfig
+#  include haproxy.syntax
+
+context default
+    keyword ;; brightred
+    keyword \\@ brightred
+    keyword \\$ brightred
+    keyword \\\\ brightred
+    keyword \\" brightred
+    keyword \\' brightred
+    keyword \\` brightred
+    keyword ` brightred
+    keyword ; brightcyan
+    keyword $(*) brightgreen
+    keyword ${*} brightgreen
+    keyword { brightcyan
+    keyword } brightcyan
+
+    keyword whole linestart #!\[\s\]*\n brightcyan black
+
+    keyword $\* brightred
+    keyword $@ brightred
+    keyword $# brightred
+    keyword $? brightred
+    keyword $- brightred
+    keyword $$ brightred
+    keyword $! brightred
+    keyword $_ brightred
+
+    keyword whole 2>&1 brightred
+    keyword whole 1>&2 brightred
+    keyword whole 2> brightred
+    keyword whole 1> brightred
+
+    keyword wholeright $\[0123456789\] brightred
+
+    keyword wholeright $+ brightgreen
+
+    keyword $ brightgreen
+
+    keyword wholeleft linestart function*() brightmagenta
+    keyword wholeleft linestart function\[\s\]+ brightmagenta
+    keyword wholeright +() brightmagenta
+
+    keyword whole hdr(+)		brightmagenta
+    keyword whole hdr_sub(+)		brightmagenta
+    keyword whole req_ssl_sni		brightmagenta
+
+
+
+wholechars abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._/
+
+    keyword whole	if		yellow
+    keyword whole	unless		yellow
+    keyword whole	-i		black brightmagenta
+
+    keyword whole linestart	listen		black white
+    keyword whole linestart	global		black white
+    keyword whole linestart	defaults	black white
+
+    keyword whole linestart	frontend	black brightred
+    keyword whole linestart	backend		black yellow
+
+    keyword whole	and		brightred
+    keyword whole	or		brightred
+
+    keyword whole		acl		yellow
+    keyword whole		tcp-request		yellow
+    keyword whole		http-request	yellow
+    keyword whole		use_backend	yellow
+
+    keyword whole		default_backend	yellow
+    keyword whole		no-match	brightred
+
+#    keyword whole		yellow
+    keyword whole		errorfile	yellow
+    keyword whole		option	yellow
+    keyword whole		chroot	yellow
+    keyword whole		log		yellow
+    keyword whole		user		yellow
+    keyword whole		group		yellow
+    keyword whole		daemon	yellow
+    keyword whole		bind		yellow
+    keyword whole		server	yellow
+    keyword whole		mode		yellow
+
+    keyword whole forwardfor		magenta
+    keyword whole httplog		magenta
+    keyword whole dontlognull		magenta
+    keyword whole http-*		magenta
+
+    keyword wholeright -ssl		brightmagenta
+
+    keyword whole tcp		cyan
+    keyword whole http		cyan
+    keyword whole https		cyan
+    keyword whole redirect		cyan
+    keyword whole scheme		cyan
+    keyword wholeleft set-+		cyan
+    keyword whole header		cyan
+
+    keyword wholeleft /+	green
+
+    keyword whole		path_beg			brightmagenta
+
+    keyword whole		ca-base				brightmagenta
+    keyword whole		crt-base			brightmagenta
+    keyword whole		ssl-default-bind-ciphers	brightmagenta
+    keyword whole		ssl-default-bind-ciphersuites	brightmagenta
+    keyword whole		ssl-default-bind-options	brightmagenta
+    keyword whole		ssl-hello-chk			brightmagenta
+    keyword whole		ssl-min-ver			brightmagenta
+
+	# PROCESS MANAGEMENT
+	keyword whole 51degrees-cache-size	brightcyan
+	keyword whole 51degrees-data-file	brightcyan
+	keyword whole 51degrees-property-name-list	brightcyan
+	keyword whole 51degrees-property-separator	brightcyan
+	keyword whole ca-base	brightcyan
+	keyword whole chroot	brightcyan
+	keyword whole cluster-secret	brightcyan
+	keyword whole cpu-map	brightcyan
+	keyword whole crt-base	brightcyan
+	keyword whole daemon	brightcyan
+	keyword whole default-path	brightcyan
+	keyword whole description	brightcyan
+	keyword whole deviceatlas-json-file	brightcyan
+	keyword whole deviceatlas-log-level	brightcyan
+	keyword whole deviceatlas-properties-cookie	brightcyan
+	keyword whole deviceatlas-separator	brightcyan
+	keyword whole expose-experimental-directives	brightcyan
+	keyword whole external-check	brightcyan
+	keyword whole fd-hard-limit	brightcyan
+	keyword whole gid	brightcyan
+	keyword whole grace	brightcyan
+	keyword whole group	brightcyan
+	keyword whole h1-accept-payload-with-any-method	brightcyan
+	keyword whole h1-case-adjust	brightcyan
+	keyword whole h1-case-adjust-file	brightcyan
+	keyword whole h2-workaround-bogus-websocket-clients	brightcyan
+	keyword whole hard-stop-after	brightcyan
+	keyword whole httpclient.resolvers.id	brightcyan
+	keyword whole httpclient.resolvers.prefer	brightcyan
+	keyword whole httpclient.retries	brightcyan
+	keyword whole httpclient.ssl.ca-file	brightcyan
+	keyword whole httpclient.ssl.verify	brightcyan
+	keyword whole httpclient.timeout.connect	brightcyan
+	keyword whole insecure-fork-wanted	brightcyan
+	keyword whole insecure-setuid-wanted	brightcyan
+	keyword whole issuers-chain-path	brightcyan
+	keyword whole localpeer	brightcyan
+	keyword whole log	brightcyan
+	keyword whole log-send-hostname	brightcyan
+	keyword whole log-tag	brightcyan
+	keyword whole lua-load	brightcyan
+	keyword whole lua-load-per-thread	brightcyan
+	keyword whole lua-prepend-path	brightcyan
+	keyword whole mworker-max-reloads	brightcyan
+	keyword whole nbthread	brightcyan
+	keyword whole node	brightcyan
+	keyword whole numa-cpu-mapping	brightcyan
+	keyword whole pidfile	brightcyan
+	keyword whole pp2-never-send-local	brightcyan
+	keyword whole presetenv	brightcyan
+	keyword whole prealloc-fd	brightcyan
+	keyword whole resetenv	brightcyan
+	keyword whole set-dumpable	brightcyan
+	keyword whole set-var	brightcyan
+	keyword whole setenv	brightcyan
+	keyword whole ssl-default-bind-ciphers	brightcyan
+	keyword whole ssl-default-bind-ciphersuites	brightcyan
+	keyword whole ssl-default-bind-client-sigalgs	brightcyan
+	keyword whole ssl-default-bind-curves	brightcyan
+	keyword whole ssl-default-bind-options	brightcyan
+	keyword whole ssl-default-bind-sigalgs	brightcyan
+	keyword whole ssl-default-server-ciphers	brightcyan
+	keyword whole ssl-default-server-ciphersuites	brightcyan
+	keyword whole ssl-default-server-client-sigalgs	brightcyan
+	keyword whole ssl-default-server-curves	brightcyan
+	keyword whole ssl-default-server-options	brightcyan
+	keyword whole ssl-default-server-sigalgs	brightcyan
+	keyword whole ssl-dh-param-file	brightcyan
+	keyword whole ssl-propquery	brightcyan
+	keyword whole ssl-provider	brightcyan
+	keyword whole ssl-provider-path	brightcyan
+	keyword whole ssl-server-verify	brightcyan
+	keyword whole ssl-skip-self-issued-ca	brightcyan
+	keyword whole stats	brightcyan
+	keyword whole strict-limits	brightcyan
+	keyword whole uid	brightcyan
+	keyword whole ulimit-n	brightcyan
+	keyword whole unix-bind	brightcyan
+	keyword whole unsetenv	brightcyan
+	keyword whole user	brightcyan
+	keyword whole wurfl-cache-size	brightcyan
+	keyword whole wurfl-data-file	brightcyan
+	keyword whole wurfl-information-list	brightcyan
+	keyword whole wurfl-information-list-separator	brightcyan
+
+
+
+
+	# PERFORMANCE TUNING
+	keyword whole busy-polling	magenta
+	keyword whole max-spread-checks	magenta
+	keyword whole maxcompcpuusage	magenta
+	keyword whole maxcomprate	magenta
+	keyword whole maxconn	magenta
+	keyword whole maxconnrate	magenta
+	keyword whole maxpipes	magenta
+	keyword whole maxsessrate	magenta
+	keyword whole maxsslconn	magenta
+	keyword whole maxsslrate	magenta
+	keyword whole maxzlibmem	magenta
+	keyword whole no-memory-trimming	magenta
+	keyword whole noepoll	magenta
+	keyword whole noevports	magenta
+	keyword whole nogetaddrinfo	magenta
+	keyword whole nokqueue	magenta
+	keyword whole nopoll	magenta
+	keyword whole noreuseport	magenta
+	keyword whole nosplice	magenta
+	keyword whole profiling.tasks	magenta
+	keyword whole server-state-base	magenta
+	keyword whole server-state-file	magenta
+	keyword whole spread-checks	magenta
+	keyword whole ssl-engine	magenta
+	keyword whole ssl-mode-async	magenta
+	keyword whole tune.buffers.limit	magenta
+	keyword whole tune.buffers.reserve	magenta
+	keyword whole tune.bufsize	magenta
+	keyword whole tune.comp.maxlevel	magenta
+	keyword whole tune.fail-alloc	magenta
+	keyword whole tune.fd.edge-triggered	magenta
+	keyword whole tune.h2.header-table-size	magenta
+	keyword whole tune.h2.initial-window-size	magenta
+	keyword whole tune.h2.max-concurrent-streams	magenta
+	keyword whole tune.h2.max-frame-size	magenta
+	keyword whole tune.http.cookielen	magenta
+	keyword whole tune.http.logurilen	magenta
+	keyword whole tune.http.maxhdr	magenta
+	keyword whole tune.idle-pool.shared	magenta
+	keyword whole tune.idletimer	magenta
+	keyword whole tune.lua.forced-yield	magenta
+	keyword whole tune.lua.maxmem	magenta
+	keyword whole tune.lua.service-timeout	magenta
+	keyword whole tune.lua.session-timeout	magenta
+	keyword whole tune.lua.task-timeout	magenta
+	keyword whole tune.maxaccept	magenta
+	keyword whole tune.maxpollevents	magenta
+	keyword whole tune.maxrewrite	magenta
+	keyword whole tune.pattern.cache-size	magenta
+	keyword whole tune.peers.max-updates-at-once	magenta
+	keyword whole tune.pipesize	magenta
+	keyword whole tune.pool-high-fd-ratio	magenta
+	keyword whole tune.pool-low-fd-ratio	magenta
+	keyword whole tune.quic.frontend.conn-tx-buffers.limit	magenta
+	keyword whole tune.quic.frontend.max-idle-timeout	magenta
+	keyword whole tune.quic.frontend.max-streams-bidi	magenta
+	keyword whole tune.quic.max-frame-loss	magenta
+	keyword whole tune.quic.retry-threshold	magenta
+	keyword whole tune.quic.socket-owner	magenta
+	keyword whole tune.rcvbuf.client	magenta
+	keyword whole tune.rcvbuf.server	magenta
+	keyword whole tune.recv_enough	magenta
+	keyword whole tune.runqueue-depth	magenta
+	keyword whole tune.sched.low-latency	magenta
+	keyword whole tune.sndbuf.client	magenta
+	keyword whole tune.sndbuf.server	magenta
+	keyword whole tune.stick-counters	magenta
+	keyword whole tune.ssl.cachesize	magenta
+	keyword whole tune.ssl.capture-buffer-size	magenta
+	keyword whole tune.ssl.capture-cipherlist-size (deprecated)	magenta
+	keyword whole tune.ssl.default-dh-param	magenta
+	keyword whole tune.ssl.force-private-cache	magenta
+	keyword whole tune.ssl.hard-maxrecord	magenta
+	keyword whole tune.ssl.keylog	magenta
+	keyword whole tune.ssl.lifetime	magenta
+	keyword whole tune.ssl.maxrecord	magenta
+	keyword whole tune.ssl.ssl-ctx-cache-size	magenta
+	keyword whole tune.vars.global-max-size	magenta
+	keyword whole tune.vars.proc-max-size	magenta
+	keyword whole tune.vars.reqres-max-size	magenta
+	keyword whole tune.vars.sess-max-size	magenta
+	keyword whole tune.vars.txn-max-size	magenta
+	keyword whole tune.zlib.memlevel	magenta
+	keyword whole tune.zlib.windowsize	magenta
+
+
+    keyword wholeleft timeout	yellow
+    keyword whole connect	cyan
+    keyword whole client	cyan
+#    keyword whole server	cyan
+
+
+    keyword whole global	brightred
+    keyword whole defaults	brightred
+    keyword whole listen	brightred
+    keyword whole haproxy	brightred
+
+
+
+    keyword whole gpg red
+    keyword whole md5sum red
+    keyword whole openssl red
+    keyword whole ssh red
+    keyword whole scp red
+
+    keyword whole gettext.sh magenta
+    keyword whole TEXTDOMAINDIR magenta
+    keyword whole TEXTDOMAIN magenta
+    keyword whole VERSION magenta
+
+    keyword whole /dev/audio brightblue
+    keyword whole /dev/dsp brightblue
+    keyword whole /dev/null brightblue
+    keyword whole /dev/mixed brightblue
+    keyword whole /dev/stdin brightblue
+    keyword whole /dev/stdout brightblue
+    keyword whole /dev/stderr brightblue
+    keyword whole /dev/zero brightblue
+
+# --- IPnumber
+#wholechars 0123456789
+    keyword wholeleft \[1234567890\]+\.\[1234567890\]+\.\[1234567890\]+\.\[1234567890\] cyan
+    keyword wholeright :\[1234567890\] brightred
+    keyword wholeright \/\[1234567890\] black cyan
+
+
+wholechars abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_
+
+context #--- \n white
+context #\sHAPROXY \n white
+
+context # \n brown
+    spellcheck
+
+context ' ' green
+
+context " " green
+    keyword wholeright $\[0123456789\] brightred
+
+    keyword wholeright $+ brightgreen
+
+    keyword $ brightgreen
+
+
