@@ -11,6 +11,9 @@ context default
     spellcheck
     keyword linestart //===*\n black brown
     keyword whole //*\n brown
+    keyword =~ brightmagenta
+    keyword == brightcyan
+    keyword != brightred
     keyword = yellow
     keyword {{*}} brightred
     keyword pipeline black brightred
@@ -24,6 +27,7 @@ wholechars abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._
     keyword whole echo cyan
     keyword whole printf cyan
     keyword whole return\s cyan
+#    keyword whole \.*\s brightmagenta
     
     keyword wholeleft env.\[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\] brightcyan
     keyword wholeright .\[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\] black yellow
@@ -51,8 +55,11 @@ wholechars abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._
     keyword linestart \[\s\]-\s brightcyan
     keyword linestart //=== black white
     
+    # "YAML requires that colons and commas used as list separators be followed by a space [...]"
     keyword ,\{\s\n\} brightcyan
     keyword , brightred
+    # Below, we can get by with just "*:\{\s\n\}", but we prefer to restrict the
+    # key names in order not to grab too much (e.g., "{one: 1, two: 2}", "one: 1  # possibilities: 1 or 2").
     keyword \{0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\}\[\s-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\]:\{\s\n\} yellow
     keyword ( yellow
     keyword ) yellow
@@ -73,6 +80,7 @@ context ' ' gray
 
 context " " green
     spellcheck
+#    keyword <*> magenta
     keyword ${*} brightred
     keyword {{*}} brightred
     keyword ' cyan
@@ -83,3 +91,7 @@ context " " green
 
     spellcheck
     keyword {{*}} brightred
+
+context / / brightcyan
+   keyword $ brightred
+ 
