@@ -1,0 +1,85 @@
+# THIS IS CONTENT OF: $SHAREPATH/share/mc/syntax/Jenkinsfile.syntax
+#
+# ADD following 2 lines to $SHAREPATH/share/mc/syntax/Syntax:
+# file .\*\\.Jenkinsfile$ Jenkinsfile 
+# include Jenkinsfile.syntax
+#
+# MACOS> SHAREPATH='/opt/homebrew/Cellar/midnight-commander/4.8.31'
+# LINUX> SHAREPATH='/usr/lib/'
+
+context default
+    spellcheck
+    keyword linestart //===*\n black brown
+    keyword whole //*\n brown
+    keyword = yellow
+    keyword {{*}} brightred
+    keyword pipeline black brightred
+
+
+
+wholechars abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._
+
+    keyword whole trim cyan
+    keyword whole sh cyan
+    keyword whole echo cyan
+    keyword whole printf cyan
+    keyword whole return\s cyan
+    
+    keyword wholeleft env.\[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\] brightcyan
+    keyword wholeright .\[0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\] black yellow
+    keyword whole if brightmagenta
+    keyword whole else brightmagenta
+    keyword whole def brightcyan
+    keyword whole int brightcyan
+    keyword whole when brightmagenta
+    keyword whole String brightcyan
+    keyword whole agent black brightgreen
+    keyword whole stages black magenta
+    keyword whole stage black magenta
+    keyword whole steps black cyan
+    keyword whole post black cyan
+
+    keyword whole always white gray
+    keyword whole success white green
+    keyword whole failure white red
+    keyword whole unstable white magenta
+    keyword whole changed black yellow
+ 
+    keyword whole options black green
+    keyword whole environment black green
+    keyword linestart --- brightcyan
+    keyword linestart \[\s\]-\s brightcyan
+    keyword linestart //=== black white
+    
+    keyword ,\{\s\n\} brightcyan
+    keyword , brightred
+    keyword \{0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\}\[\s-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\]:\{\s\n\} yellow
+    keyword ( yellow
+    keyword ) yellow
+    keyword [ brightcyan
+    keyword ] brightcyan
+    keyword { brightcyan
+    keyword } brightcyan
+    keyword ; brightred
+    keyword whole true brightmagenta
+    keyword whole false brightmagenta
+    keyword whole null brightmagenta
+    keyword whole always brightcyan
+    keyword script black green
+
+context ' ' gray
+    keyword \\' brightred
+
+
+context " " green
+    spellcheck
+    keyword ${*} brightred
+    keyword {{*}} brightred
+    keyword ' cyan
+    keyword \\" brightgreen
+    keyword \\\\ brightgreen
+    keyword \\\{xuU\}\[0123456789\] brightgreen
+    keyword \\\{0abfnrtve_NLP\} brightgreen
+
+    spellcheck
+    keyword {{*}} brightred
